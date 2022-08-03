@@ -1,0 +1,318 @@
+.container{
+    margin: 0 auto;
+    max-width: 1320px;
+    padding: 0 12px;
+    @include pad-768{
+        max-width: 696px;
+    }
+    @include pad-650{
+        max-width: 578px;
+    }
+    @include phone-576{
+        max-width: 504px;
+    }
+    @include phone-375{
+        max-width: 348px;
+    }
+}
+
+.header{
+    background-color: $BrightRed;
+    @include pad-650{
+        width: 100%;
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.header__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include pad-768{
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+}
+
+.logo-img{
+    width: 80px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.nav{
+    display: flex;
+    gap: 64px;
+    li{
+        @include font-Noto(20px);
+    }
+    @include pad-650{ 
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0px;
+        width: 100%;
+        text-align: center;
+        background-color: $BrightRed;
+        position: absolute;
+        top: -108px;
+        left: 0;
+        transition: top 0.3s;
+        opacity: 0;
+        &.active{
+            top: 80px;
+            opacity: 1;
+        }
+    }
+    @include pad-650{
+        li{
+            display: block;
+            width: 50%;
+            outline: 1px solid white;
+            padding-top: 12px;
+            padding-bottom: 7px;
+        }
+    } 
+}
+
+.navBtn{
+    display: none;
+    img{
+        width: 40px;
+    }
+    @include pad-650{
+        display: block; 
+    }
+}
+
+
+.footer{
+    background-color: $BrightRed;
+    padding-top: 48px;
+    @include pad-768{
+        .footer__link,
+        .contactInfo,
+        .content{
+            margin-left: -12px;
+            margin-right: -12px;
+    }
+    }
+    @include pad-650{
+        padding-top: 24px;
+    }
+}
+
+.footer__link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include pad-650{
+        justify-content: flex-end;
+    }
+    .text{
+        display: flex;
+        gap: 48px;
+        @include font-Noto(16px);
+        @include pad-650{
+            display: none;
+        }
+    }
+    .icon{
+        display: flex;
+        gap: 32px;
+        img{
+            width: 48px;
+        }
+        @include pad-768{
+            gap: 16px;
+            img{
+                width: 40px;
+            }
+        }
+        @include phone-576{
+            gap: 8px;
+            img{
+                width: 24px;
+            }
+        }
+    }
+}
+
+.contactInfo{
+    padding-top: 24px;
+    padding-bottom: 31px;
+    border-bottom: 1px solid white;
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        @include font-Noto(36px);
+        img{
+            width: 48px;
+        }
+        @include phone-576{
+            @include font-Noto(16px);
+            img{
+                width: 24px;
+            }
+        }
+    }
+    &__item:first-child{
+        margin-bottom: 8px;
+    }
+    @include pad-650{
+        margin-top: -72px;
+        padding-bottom: 24px;
+    }
+    @include phone-576{
+        margin-top: -48px;
+    }
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    .Copyright-text{
+        @include font-Roboto(16px);
+    }
+    .text{
+        display: flex;
+        gap: 48px;
+        @include font-Noto(14px);
+        @include phone-576{
+            gap: 8px;
+            flex-direction: column;
+            @include font-Noto(16px);
+        }
+    }
+    @include phone-576{
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 16px;
+        padding-bottom: 24px;
+    }
+}
+
+
+
+
+.pagination ul{
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include phone-375{
+        margin-bottom: 64px;
+    }
+    li{
+        border: 1px solid #555555;
+        &:not(:first-child){
+            border-left: none;
+        }
+        a{
+            display: block;
+            height: inherit;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            height: 48px;
+            text-align: center;
+            @include phone-375{
+                @include font-Roboto(16px,500,#555555);
+                height: 45px;
+            }
+        }
+        &.prev-next{ 
+            @include font-Roboto(19px,500,#555555);
+            width: 81px;
+            @include phone-375{
+                @include font-Roboto(16px,500,#555555);
+                width: 75px;
+            }
+        }
+        &.page{
+            @include font-Roboto(18px,500,#555555);
+            width: 42px;
+            &.active{
+                color: #fff;
+                background-color: $Black;
+            }
+            @include phone-375{
+                @include font-Roboto(16px,500,#555555);
+                width: 40px;
+            }
+        }
+        &:hover,
+        &.bgColor{
+            background-color: #F2F2F2;
+        }
+    }
+}
+
+
+.link--hover{
+    &::after{
+        content: "";
+        display: block;
+        border-bottom: 3px solid white;
+        padding-top: 2px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-in-out;
+    }
+    &:hover::after{
+        transform: scaleX(1);
+    }
+}
+
+.icon--hover{
+    transition: transform 0.2s ease-in-out;
+    &:hover{
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+.link--hoverLonestar{
+    transition: color 0.3s ease-in-out;
+    &:hover{
+        color: $Lonestar;
+    }
+}
+
+.link--hover-BGLonestar{
+    transition: color 0.3s ease-in-out;
+    &:hover{
+        background-color: $Lonestar;
+    }
+}
+
+.link--hoverBrightRed{
+    transition: color 0.3s ease-in-out;
+    &:hover{
+        color: $BrightRed;
+    }
+}
+
+.link--hover-BDBrightRed{
+    transition: color 0.3s ease-in-out;
+    &:hover{
+        opacity: 0.9;
+        border-radius: 10px;
+        outline: 1px solid $BrightRed;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,308 @@
+.blog{
+    padding-top: 96px;
+    padding-bottom: 124px;
+    @include pad-768{
+        padding-top: 80px;
+    }
+    @include phone-375{
+        padding-top: 40px;
+        padding-bottom: 64px;
+    }
+    &__content{
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+    }
+    .title{
+        margin-bottom:32px;
+        @include page_title;
+        @include pad-768{
+            margin-bottom: 40px;
+        }
+        @include phone-375{
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.blog__menu{
+    background-color: $Lonestar;
+    @include phone-375{
+        &.displayNone{
+            display: none;
+        }
+    }
+    .blog__menu__content{
+        margin-left: -12px;
+        margin-right: -12px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include font-Noto(20px,700,white);
+        @include phone-375{
+            @include font-Noto(16px,700,white);
+        }
+    }
+    &__items{
+        display: flex;
+        column-gap: 48px;
+        padding-top: 13px;
+        padding-bottom: 8px;
+        @include phone-375{
+            column-gap: 25px;
+        }
+    }
+    &__search{
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        height: 29.15px;
+        .material-symbols-outlined{
+            font-size: 29.15px;
+            color: white;
+            cursor: pointer;
+        }
+        @include phone-375{
+            &.displayNone{
+                display: none;
+            }
+        }
+    }
+}
+
+.articles{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    @include phone-375{
+        row-gap: 24px;
+    }
+    .article{
+        display: flex;
+        justify-content: space-between;
+        &__img,
+        &__content{
+            width: calc( (100% - 24px) / 2);
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        @include pad-768{
+            &__content{
+                height: 208px;
+            }
+        }
+        @include phone-375{
+            flex-direction: column;
+            row-gap: 8px;
+            height: 276px;
+            &__img,
+            &__content{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.article{
+    &__title{
+        @include font-Noto(32px,500,$Lonestar);
+        @include pad-768{
+            @include font-Noto(24px,500,$Lonestar);
+        }
+    }
+    &__sub-title{
+        @include font-Roboto(20px,500,$Black);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        @include pad-768{
+            @include font-Noto(16px,500,$Black);
+            margin-bottom: 4px;
+        }
+    }
+    &__date{
+        @include font-Roboto(16px,500,$Black);
+    }
+    &__text{
+        @include font-Noto(20px,500,#555555);
+        @include pad-768{
+            @include font-Noto(16px,500,#555555);
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+        }
+    }
+    &__btn{
+        @include font-Roboto(36px,700,$Lonestar);
+        text-align: right;
+        @include pad-768{
+            @include font-Noto(16px,500,#555555);
+            text-transform: lowercase;
+            p,
+            &::before{
+                display: inline-block;
+                background-color: white;
+                transform: translateY(-100%);
+            }
+            &::before{
+                content: "……";
+                margin-right: -4px;
+            }
+        }
+    }
+    &__text,
+    &__btn{
+        @include phone-375{
+            display: none;
+        }
+    }
+}
+
+
+
+
+
+.articleText{
+    padding-top: 24px;
+    padding-bottom: 80px;
+    @include pad-768{
+        padding-top: 8px;
+    }
+    @include phone-375{
+        padding-top: 16px;
+        padding-bottom: 64px;
+    }
+    .all-page{
+        display: flex;
+        column-gap: 24px;
+        margin-left: -12px;
+        margin-right: -12px;
+        //@include phone-375{
+        //    flex-direction: column;
+        //}
+    }
+}
+
+.bread-crumbs{
+    display: flex;
+    padding-bottom: 8px;
+    @include font-Noto(16px,500,$Black);
+    .active{
+        @include font-Noto(16px,500,$BrightRed);
+    }
+
+}
+
+.tag{
+    display: flex;
+    gap: 15px;
+    @include font-Noto(24px,700,$BrightRed);
+    @include pad-768{
+        @include font-Noto(16px,700,$BrightRed);
+    }
+}
+
+.articleText__content{
+    .title{
+        @include font-Noto(48px,500,$Black);
+        padding-top: 8px;
+    }
+    .sub-title{
+        @include font-Roboto(24px,500,$Black);
+        padding-bottom: 16px;
+    }
+    .paragraphs{
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        margin-bottom: 40px;
+        @include pad-768{
+            row-gap: 24px;
+        }
+        @include phone-375{
+            row-gap: 16px;
+        }
+    }
+    .paragraph{
+        max-width: 856px;
+        &__img,
+        &__des{
+            width: 100%;
+        }
+        &__des{
+            @include font-Noto(16px,500,#555555);
+            margin-top: 8px;
+        }
+    }
+}
+
+.share-icons{
+    display: flex;
+    column-gap: 16px;
+    @include font-Noto(16px,700,$Black);
+    &__link{
+        width: 24px;
+    }
+    border-bottom: 1px solid #707070;
+    padding-bottom: 15px;
+    @include phone-375{
+        display: none;
+    }
+}
+
+.other-pages{
+    display: flex;
+    justify-content: space-between;
+    .pre-page a,
+    .next-page a{
+        display: flex;
+        align-items: center;
+    }
+    @include font-Noto(16px,500,$Black);
+    margin-top: 24px;
+    @include phone-375{
+        display: none;
+    }
+}
+
+.tags{
+    margin-top: 76px;
+    @include pad-768{
+        margin-top: 73px;
+    }
+    @include phone-375{
+        display: none;
+    }
+    .title{
+        .material-symbols-outlined{
+            font-size: 38px;
+            line-height: 28px;
+            color: $BrightRed;
+        }
+        @include font-Noto(32px,700,$BrightRed);
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+    }
+    .tag{
+        width: 256px;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 4px;
+        column-gap: 24px;
+        @include pad-768{
+            width: 156px;
+            column-gap: 16px;
+        }
+    }
+}
+

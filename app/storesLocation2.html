@@ -1,0 +1,53 @@
+---
+title: 首頁
+layout: ./app/layout.ejs
+engine: ejs
+current: storesLocation2.html
+---
+<main>
+    <section class="stores">
+        <div class="container">
+            <div class="storeLocation">
+                <h2 class="title">門市據點</h2>
+                <div class="areaSelect">
+                    <label for="area" class="text">選擇地區</label>
+                    <select name="" id="area" class="selectItem">
+                        <option value="">請選擇</option>
+                        <option value="taipei" selected>台北中山旗艦店</option>
+                    </select>
+                </div>
+                <ul class="store__Info">
+                    <li class="store__Info__content item">
+                        <img class="storeImg" src="assets/images/store-1.png" alt="store-img">
+                        <div class="des">
+                            <h3 class="sub_title">台北中山旗艦店</h3>
+                            <ul class="details">
+                                <li>
+                                    <img class="icon" src="assets/images/phone_black_36dp.svg"  alt="phone-icon">
+                                    <p class="text">電話：(02)000-1234</p>
+                                </li>
+                                <li>
+                                    <img class="icon" src="assets/images/schedule_black_36dp.svg"   alt="phone-icon">
+                                    <p class="text">營業時間：10:00-21:00</p>
+                                </li>
+                                <li>
+                                    <img class="icon" src="assets/images/place_black_36dp.svg"  alt="phone-icon">
+                                    <p class="text">地址：台北市中山區南京東路25巷2-1號</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="store__Info__map">
+                        <iframe 
+                          class=""
+                          src="https://maps.google.com/maps?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF25%E5%B7%B72-1%E8%99%9F&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                          frameborder="0"
+                          scrolling="no"
+                        ></iframe>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+    

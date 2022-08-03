@@ -1,23 +1,13 @@
-$color: #00cc99;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-.header {
-  height: 200px;
-  background-color: #00cc99;
-}
-
-.footer {
-  height: 200px;
-  background-color: #00cc99;
-}
-
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  display: flex;
-  transition: all 0.5s;
-  &:hover {
-    width: 200px;
-    background-color: $color;
-  }
-}
+@import "variable";
+@import "mixin/mixin";
+@import "mixin/grid";
+@import "reset";
+@import "base";
+@import "layout";
+@import "index";
+@import "page/products";
+@import "page/storesLocation";
+@import "page/faq";
+@import "page/blog";

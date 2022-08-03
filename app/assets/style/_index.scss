@@ -1,0 +1,419 @@
+// index
+.banner{
+    height: calc( 100vh - 80px );
+    background-image: url("../images/home-header.png");
+    background-position: center center;
+    background-size: cover;
+    @include pad-768{
+        background-image: url("../images/home-header-sm.png");
+    }
+    &__description{
+        height: calc( 100vh - 80px );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: end;
+        .title{
+            @include font-Noto(64px,700,$Lonestar);
+        }
+        .sub-title{
+            @include font-Roboto(36px,500,$Lonestar);
+        }
+        .link{
+            display: inline-block;
+            background-color: $BrightRed;
+            padding: 6px 12px;
+            margin-top: 4px;
+            @include font-Noto(20px,500);
+        }
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+        @include pad-650{
+            .title{
+                @include font-Noto(48px,700,$Lonestar);
+            }
+            .sub-title{
+                @include font-Roboto(32px,500,$Lonestar);
+            }
+        }
+        @include phone-375{
+            .title{
+                @include font-Noto(24px,700,$Lonestar);
+            }
+            .sub-title{
+                @include font-Roboto(16px,500,$Lonestar);
+            }
+        }
+    }
+}
+
+.serviceInfo{
+    background: $Fantasy;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include phone-375{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .title{
+        text-align: center;
+        @include font-Noto(48px,700,$Lonestar);
+        margin-bottom: 24px;
+        @include phone-375{
+            @include font-Noto(24px,700,$Lonestar);
+        }
+    }
+    &__content{
+        display: flex;
+        column-gap: 24px;
+        justify-content: space-between;
+        text-align: center;
+        .iconImg{
+            width: 84px;
+        }
+        .sub-title{       
+            @include font-Noto(24px,700,$Lonestar);
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        .text{
+            text-align: left;
+            @include font-Noto(16px,500,$Black);
+        }
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+            flex-wrap: wrap;
+            gap: 24px;
+            .item{
+                width: calc(( 100% - 24px) / 2);
+            }
+        }
+        @include phone-375{
+            .item{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.productType{
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .title{ 
+        @include font-Noto(48px,700,$Lonestar);
+        margin-bottom: 48px; 
+        @include phone-375{
+            @include font-Noto(24px,700,$Lonestar);
+            margin-bottom: 24px; 
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        .productTypeImg{
+            width: 416px;
+            margin-bottom: 8px;
+        }
+        .sub-title{       
+            font-style: italic;
+            @include font-Noto(48px,700,$BrightRed);
+        }
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+            flex-wrap: wrap;
+            gap: 24px;
+            .item{
+                width: 100%;
+            }
+        }
+        @include phone-375{
+            .item{
+                width: 100%;
+            }
+            .productTypeImg{
+                width: 348px;
+            }
+        }
+    }
+}
+
+.jointNameDesign{
+    background-image: url("../images/index-bg.png");
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .title{ 
+        @include font-Noto(48px,700,white);
+        margin-bottom: 48px;
+    }
+    @include phone-375{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        .title{ 
+            @include font-Noto(24px,700,white);
+            margin-bottom: 24px;
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        .jointNameDesignImg{
+            width: 648px;
+        }
+        .sub-title{       
+            font-style: italic;
+            background: white;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            @include font-Noto(48px,700,$BrightRed);
+        }
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+            flex-direction: column;
+            gap: 24px;
+            .jointNameDesignImg{
+                width: 696px;
+            }
+        }
+        @include phone-375{
+            .jointNameDesignImg{
+                width: 348px;
+            }
+        }
+    }
+}
+
+.customorRecommend{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .title{ 
+        text-align: center;
+        @include font-Noto(48px,700,$Lonestar);
+        margin-bottom: 48px;
+    }
+    &__content{
+        display: flex;
+        justify-content: space-between;
+    }
+    @include pad-768{
+        &__content{
+            margin-left: -12px;
+            margin-right: -12px;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+    }
+}
+
+.customorRecommend{  
+    .customor{
+        background-color: white;
+        box-shadow: 0px 2px 6px #00000029;
+        border: 1px solid #DEE2E6;
+        border-radius: 4px;
+        &Img{
+            width: 306px;
+        }
+        &Txt{
+            width: 306px;
+            height: 205px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include font-Noto(16px,500,$Black);
+            .name{
+                margin-bottom: 8px
+            }
+        }
+        .date{
+            @include font-Noto(14px,500,$DoveGray);
+        }
+    }
+    @include pad-768{
+        .customor{
+            width: calc(( 100% - 24px) / 2);
+            &Img,
+            &Txt{
+                width: 336px;
+            }
+        }
+    }
+    @include phone-375{
+        .customor{
+            width: 100%;
+            &Img,
+            &Txt{
+                width: 348px;
+            }
+        }
+    }
+}
+
+.contactUs{
+    background: $Fantasy;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include phone-375{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    &__description{
+        @include font-Noto(20px,500,$Black);
+        margin: 24px auto;
+        @include pad-768{
+            @include font-Noto(16px,500,$Black);
+        }
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title{ 
+            text-align: center;
+            @include font-Noto(48px,700,$Lonestar);
+        }
+}
+
+.form__content{
+    width: 636px;
+    @include pad-768{
+        width: 576px;
+    }
+    @include phone-375{
+        width: 348px;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        &__text{
+            @include font-Noto(16px,500,$Black);
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        &__input,
+        &__textarea{
+            opacity: 0.2;
+            padding: 6px 12px;
+            width: 636px;
+            margin-bottom: 16px;
+            @include font-Noto(16px,500,$Black);
+            @include pad-768{
+                width: 576px;
+            }
+            @include phone-375{
+                width: 348px;
+            }
+        }
+        &__textarea{
+            height: 136px;
+        }
+        .check{
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+            @include font-Noto(16px,500,$Black);
+            input[type=checkbox]{
+                width: 24px;
+                height: 24px;
+            }
+        }
+        .submitBtn{
+            border: none;
+            background-color: $BrightRed;
+            padding: 16px 176px;
+            width: 416px;
+            cursor: pointer;
+            margin: 48px auto 0;
+            @include font-Noto(16px,700);
+            @include pad-768{
+                padding: 16px 136px;
+                width: 348px;
+            }
+            @include phone-375{
+                margin: 24px auto 0;
+            }
+        }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px){
+    
+}
+
+
+
+
+

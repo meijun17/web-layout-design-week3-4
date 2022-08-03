@@ -1,0 +1,41 @@
+.faq{
+    padding-top: 96px;
+    padding-bottom: 80px;
+    @include pad-768{
+        padding-top: 80px;
+    }
+    @include phone-375{
+        padding-top: 40px;
+        padding-bottom: 64px;
+    }
+    &__content{
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+    }
+    li:not(:last-child){
+        margin-bottom: 32px;
+        @include phone-375{
+            margin-bottom: 24px;
+        }
+    }
+    .title{
+        @include page_title
+    }
+    .sub-title{
+        @include font-Noto(24px,700,$Black);
+        margin-top: 32px;
+        margin-bottom: 24px;
+        @include phone-375{
+            margin-top: 24px;
+        }
+    }
+    .Q-text{
+        @include font-Noto(20px,700,$Black);
+        margin-bottom: 8px;
+    }
+    .A-text{
+        @include font-Noto(16px,500,$Black);
+    }
+}

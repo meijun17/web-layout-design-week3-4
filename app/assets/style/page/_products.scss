@@ -1,0 +1,176 @@
+.menu{
+    ul{
+        display: flex;
+        justify-content: center;
+        li{
+            border: 1px solid #DCDCDC;
+            border-bottom: 1px solid #DCDCDC;
+            width: calc( 100% / 3 );
+            &:nth-of-type(2){
+                border-right: none;
+                border-left: none;
+            }
+        } 
+
+    }
+}
+
+.menu{
+    .category{
+        display: block;
+        text-align: center;
+        padding-top: 24px;
+        @include font-Roboto(32px,500,$Black);
+        &::after{
+            content:"";
+            display: block;
+            padding-top: 15px;
+            border-bottom:8px solid $BrightRed;
+            transform: scale(0);
+            transition: transform 0.5s ease-in-out;
+        }
+        &.active::after,
+        &:hover::after{
+            transform: scale(1);
+        }
+        @include pad-768{
+            @include font-Roboto(24px,500,$Black);
+        }
+        @include phone-375{
+            @include font-Roboto(16px,500,$Black);
+        }
+    }
+}
+
+.banner__product{
+    display: flex;
+    &__img{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 296px;
+        width: 50%;
+        @include phone-375{
+            height: 136px;
+        }
+    }
+    .img1{
+        background-image: url("../images/product-header-1.png");
+    }
+    .img2{
+        background-image: url("../images/product-header-2.png");
+    }
+    .img3{
+        background-image: url("../images/product-header-3.png");
+    }
+    .img4{
+        background-image: url("../images/product-header-4.png");
+    }
+    @include pad-768{
+        .img1{
+            background-image: url("../images/product-header-sm-1.png");
+        }
+        .img2{
+            background-image: url("../images/product-header-sm-2.png");
+        }
+        .img3{
+            background-image: url("../images/product-header-sm-3.png");
+        }
+        .img4{
+            background-image: url("../images/product-header-sm-4.png");
+        }
+    }
+}
+
+
+.products{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @include phone-375{
+        padding-top: 40px;
+        padding-bottom: 64px;
+    }
+    .title{
+        text-align: center;
+        @include font-Roboto(42px,500,$Black);
+        @include phone-375{
+            @include font-Roboto(24px,500,$Black);
+        }
+    }
+    .sub-title{
+        text-align: center;
+        @include font-Noto(32px,500,$Black);
+        margin-bottom: 32px;
+        @include phone-375{
+            @include font-Roboto(24px,500,$Black);
+            margin-bottom: 24px;
+        }
+    }
+    &__content{
+        width: inherit;
+        display: flex;
+        column-gap: 24px;
+        flex-wrap: wrap;
+        row-gap: 80px;
+        @include pad-768{
+            margin-left: -12px;
+            margin-right: -12px;
+            row-gap: 40px;
+        }
+    }
+}
+
+.product{
+    width: calc((100% - 72px) / 4 );
+    @include pad-768{
+        width: calc((100% - 24px) / 2 );
+    }
+    @include phone-375{
+        width: 100%;
+    }
+    &__img{
+        width: 100%;
+    }
+}
+
+.productType2{
+    width: calc((100% - 72px) / 3 );
+    @include pad-768{
+        width: calc((100% - 24px) / 2 );
+    }
+    @include phone-375{
+        width: 100%;
+    }
+    &__img{
+        width: 100%;
+    }
+}
+
+.product{
+    .detail{
+        display: flex;
+        justify-content: space-between;
+        .model{
+            @include font-Roboto(24px,500,$Black);
+        }
+        .price{
+            @include font-Roboto(24px,500,$BrightRed);
+        }
+    }
+    .colors{
+        display: flex;
+        .color1,
+        .color2{
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+        .color1{
+            background-color: #5F3E2D;
+            margin-right: 8px;
+        }
+        .color2{
+            background-color: #B75929;
+        }
+    }
+}
