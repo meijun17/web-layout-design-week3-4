@@ -114,31 +114,31 @@
     &__content{
         display: flex;
         justify-content: space-between;
-        .productTypeImg{
-            width: 416px;
-            margin-bottom: 8px;
-        }
+        gap: 24px;
         .sub-title{       
             font-style: italic;
             @include font-Noto(48px,700,$BrightRed);
         }
         @include pad-768{
-            margin-left: -12px;
-            margin-right: -12px;
             flex-wrap: wrap;
-            gap: 24px;
+            justify-content: center;
             .item{
-                width: 100%;
+                max-width: 50%;
             }
         }
         @include phone-375{
+            margin-left: -12px;
+            margin-right: -12px;
             .item{
-                width: 100%;
-            }
-            .productTypeImg{
-                width: 348px;
+                max-width: 100%;
             }
         }
+    }
+    &Img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 8px;
     }
 }
 
@@ -164,9 +164,6 @@
     &__content{
         display: flex;
         justify-content: space-between;
-        .jointNameDesignImg{
-            width: 648px;
-        }
         .sub-title{       
             font-style: italic;
             background: white;
@@ -175,17 +172,26 @@
             @include font-Noto(48px,700,$BrightRed);
         }
         @include pad-768{
+            flex-wrap: wrap;
+            gap: 24px;
             margin-left: -12px;
             margin-right: -12px;
-            flex-direction: column;
-            gap: 24px;
-            .jointNameDesignImg{
-                width: 696px;
-            }
+        }
+    }
+    &Img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+        @include pad-768{
+            max-width: 100%;
         }
         @include phone-375{
-            .jointNameDesignImg{
-                width: 348px;
+            display: none;
+        }
+        &.img-sm{
+            display: none;
+            @include phone-375{
+                display: block;
             }
         }
     }
@@ -202,13 +208,13 @@
     &__content{
         display: flex;
         justify-content: space-between;
+        gap: 24px;
     }
     @include pad-768{
         &__content{
             margin-left: -12px;
             margin-right: -12px;
             flex-wrap: wrap;
-            gap: 24px;
         }
     }
 }
@@ -220,10 +226,12 @@
         border: 1px solid #DEE2E6;
         border-radius: 4px;
         &Img{
-            width: 306px;
+            display: block;
+            max-width: 100%;
+            height: auto;
         }
         &Txt{
-            width: 306px;
+            max-width: 100%;
             height: 205px;
             padding: 16px;
             display: flex;
@@ -345,6 +353,43 @@
         }
         }
     }
+}
+
+
+.productType__content{
+    .item{
+        transition: all 0.3s;
+        &:hover .productTypeImg{
+            transform: scale(1.01);
+        }
+        &:hover .sub-title{
+            background-color: $BrightRed;
+            color: white;
+            opacity: 0.7;
+        }
+    }
+}
+
+
+
+.jointNameDesign__item{
+    position: relative;
+}
+
+.jointNameDesign__item:hover .img--hover-bgWhite::before{
+    opacity: 0.4;
+}
+
+.img--hover-bgWhite::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(white, transparent);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
 
 

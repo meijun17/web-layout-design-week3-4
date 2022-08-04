@@ -120,36 +120,35 @@
     }
 }
 
-.product{
+.productType-four-items{
     width: calc((100% - 72px) / 4 );
+}
+
+.productType-three-items{
+    width: calc((100% - 72px) / 3 );
+}
+
+.productType-four-items,
+.productType-three-items{
     @include pad-768{
         width: calc((100% - 24px) / 2 );
     }
     @include phone-375{
-        width: 100%;
-    }
-    &__img{
         width: 100%;
     }
 }
 
-.productType2{
-    width: calc((100% - 72px) / 3 );
-    @include pad-768{
-        width: calc((100% - 24px) / 2 );
-    }
-    @include phone-375{
-        width: 100%;
-    }
-    &__img{
-        width: 100%;
-    }
+.product__img{
+    max-width: 100%;
+    display: block;
+    height: auto;
 }
 
 .product{
     .detail{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         .model{
             @include font-Roboto(24px,500,$Black);
         }

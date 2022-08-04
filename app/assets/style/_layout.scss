@@ -16,6 +16,10 @@
     }
 }
 
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
 .header{
     background-color: $BrightRed;
     @include pad-650{
