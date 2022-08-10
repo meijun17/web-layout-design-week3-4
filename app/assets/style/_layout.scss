@@ -183,57 +183,57 @@
 
 
 
-// .pagination ul{
-//     margin-bottom: 80px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     @include phone-375{
-//         margin-bottom: 64px;
-//     }
-//     li{
-//         border: 1px solid #555555;
-//         &:not(:first-child){
-//             border-left: none;
-//         }
-//         a{
-//             display: block;
-//             height: inherit;
-//             padding-top: 11px;
-//             padding-bottom: 11px;
-//             height: 48px;
-//             text-align: center;
-//             @include phone-375{
-//                 @include font-Roboto(16px,500,#555555);
-//                 height: 45px;
-//             }
-//         }
-//         &.prev-next{ 
-//             @include font-Roboto(19px,500,#555555);
-//             width: 81px;
-//             @include phone-375{
-//                 @include font-Roboto(16px,500,#555555);
-//                 width: 75px;
-//             }
-//         }
-//         &.page{
-//             @include font-Roboto(18px,500,#555555);
-//             width: 42px;
-//             &.active{
-//                 color: #fff;
-//                 background-color: $Black;
-//             }
-//             @include phone-375{
-//                 @include font-Roboto(16px,500,#555555);
-//                 width: 40px;
-//             }
-//         }
-//         &:hover,
-//         &.bgColor{
-//             background-color: #F2F2F2;
-//         }
-//     }
-// }
+.pagination ul{
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mobile{
+        margin-bottom: 64px;
+    }
+    li{
+        border: 1px solid #555555;
+        &:not(:first-child){
+            border-left: none;
+        }
+        a{
+            display: block;
+            height: inherit;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            height: 48px;
+            text-align: center;
+            @include mobile{
+                @include font-Roboto(16px,500,#555555);
+                height: 45px;
+            }
+        }
+        &.prev-next{ 
+            @include font-Roboto(19px,500,#555555);
+            width: 81px;
+            @include mobile{
+                @include font-Roboto(16px,500,#555555);
+                width: 75px;
+            }
+        }
+        &.page{
+            @include font-Roboto(18px,500,#555555);
+            width: 42px;
+            &.active{
+                color: #fff;
+                background-color: $Black;
+            }
+            @include mobile{
+                @include font-Roboto(16px,500,#555555);
+                width: 40px;
+            }
+        }
+        &:hover,
+        &.bgColor{
+            background-color: #F2F2F2;
+        }
+    }
+}
 
 
 .link--hover{
