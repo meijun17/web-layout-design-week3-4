@@ -1,18 +1,13 @@
 .container{
     margin: 0 auto;
-    max-width: 1320px;
-    padding: 0 12px;
-    @include pad-768{
-        max-width: 696px;
+    max-width: 1320px;   // 1296px + 24px = 1320p 
+    padding-left: 12px;
+    padding-right: 12px;
+    @include pad{
+        max-width: 720px; // 696px + 24px = 720px
     }
-    @include pad-650{
-        max-width: 578px;
-    }
-    @include phone-576{
-        max-width: 504px;
-    }
-    @include phone-375{
-        max-width: 348px;
+    @include mobile{
+        max-width: 372px; // 348px + 24px = 372px
     }
 }
 
@@ -22,9 +17,9 @@
 
 .header{
     background-color: $BrightRed;
-    @include pad-650{
+    @include mobile{
         width: 100%;
-        position: relative;
+        position: fixed;
         z-index: 10;
     }
 }
@@ -33,10 +28,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include pad-768{
-        margin-left: -12px;
-        margin-right: -12px;
-    }
 }
 
 .logo-img{
@@ -51,7 +42,7 @@
     li{
         @include font-Noto(20px);
     }
-    @include pad-650{ 
+    @include mobile{ 
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 0px;
@@ -68,7 +59,7 @@
             opacity: 1;
         }
     }
-    @include pad-650{
+    @include mobile{
         li{
             display: block;
             width: 50%;
@@ -78,13 +69,12 @@
         }
     } 
 }
-
 .navBtn{
     display: none;
     img{
         width: 40px;
     }
-    @include pad-650{
+    @include mobile{
         display: block; 
     }
 }
@@ -93,15 +83,7 @@
 .footer{
     background-color: $BrightRed;
     padding-top: 48px;
-    @include pad-768{
-        .footer__link,
-        .contactInfo,
-        .content{
-            margin-left: -12px;
-            margin-right: -12px;
-    }
-    }
-    @include pad-650{
+    @include mobile{
         padding-top: 24px;
     }
 }
@@ -110,14 +92,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include pad-650{
+    @include mobile{
         justify-content: flex-end;
     }
     .text{
         display: flex;
         gap: 48px;
         @include font-Noto(16px);
-        @include pad-650{
+        @include mobile{
             display: none;
         }
     }
@@ -127,13 +109,13 @@
         img{
             width: 48px;
         }
-        @include pad-768{
+        @include pad{
             gap: 16px;
             img{
                 width: 40px;
             }
         }
-        @include phone-576{
+        @include mobile{
             gap: 8px;
             img{
                 width: 24px;
@@ -151,48 +133,45 @@
         align-items: center;
         gap: 16px;
         @include font-Noto(36px);
-        img{
-            width: 48px;
+        .material-symbols-outlined{
+            font-size: 48px;
         }
-        @include phone-576{
+        @include mobile{
             @include font-Noto(16px);
-            img{
-                width: 24px;
+            .material-symbols-outlined{
+                font-size: 24px;
             }
         }
     }
     &__item:first-child{
         margin-bottom: 8px;
     }
-    @include pad-650{
-        margin-top: -72px;
+    @include mobile{
         padding-bottom: 24px;
-    }
-    @include phone-576{
         margin-top: -48px;
     }
 }
 
-.content{
+.copyright{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 32px;
     padding-bottom: 32px;
-    .Copyright-text{
+    .copyright__text{
         @include font-Roboto(16px);
     }
     .text{
         display: flex;
         gap: 48px;
         @include font-Noto(14px);
-        @include phone-576{
+        @include mobile{
             gap: 8px;
             flex-direction: column;
             @include font-Noto(16px);
         }
     }
-    @include phone-576{
+    @include mobile{
         gap: 8px;
         flex-direction: column;
         align-items: flex-start;
@@ -204,57 +183,57 @@
 
 
 
-.pagination ul{
-    margin-bottom: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include phone-375{
-        margin-bottom: 64px;
-    }
-    li{
-        border: 1px solid #555555;
-        &:not(:first-child){
-            border-left: none;
-        }
-        a{
-            display: block;
-            height: inherit;
-            padding-top: 11px;
-            padding-bottom: 11px;
-            height: 48px;
-            text-align: center;
-            @include phone-375{
-                @include font-Roboto(16px,500,#555555);
-                height: 45px;
-            }
-        }
-        &.prev-next{ 
-            @include font-Roboto(19px,500,#555555);
-            width: 81px;
-            @include phone-375{
-                @include font-Roboto(16px,500,#555555);
-                width: 75px;
-            }
-        }
-        &.page{
-            @include font-Roboto(18px,500,#555555);
-            width: 42px;
-            &.active{
-                color: #fff;
-                background-color: $Black;
-            }
-            @include phone-375{
-                @include font-Roboto(16px,500,#555555);
-                width: 40px;
-            }
-        }
-        &:hover,
-        &.bgColor{
-            background-color: #F2F2F2;
-        }
-    }
-}
+// .pagination ul{
+//     margin-bottom: 80px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     @include phone-375{
+//         margin-bottom: 64px;
+//     }
+//     li{
+//         border: 1px solid #555555;
+//         &:not(:first-child){
+//             border-left: none;
+//         }
+//         a{
+//             display: block;
+//             height: inherit;
+//             padding-top: 11px;
+//             padding-bottom: 11px;
+//             height: 48px;
+//             text-align: center;
+//             @include phone-375{
+//                 @include font-Roboto(16px,500,#555555);
+//                 height: 45px;
+//             }
+//         }
+//         &.prev-next{ 
+//             @include font-Roboto(19px,500,#555555);
+//             width: 81px;
+//             @include phone-375{
+//                 @include font-Roboto(16px,500,#555555);
+//                 width: 75px;
+//             }
+//         }
+//         &.page{
+//             @include font-Roboto(18px,500,#555555);
+//             width: 42px;
+//             &.active{
+//                 color: #fff;
+//                 background-color: $Black;
+//             }
+//             @include phone-375{
+//                 @include font-Roboto(16px,500,#555555);
+//                 width: 40px;
+//             }
+//         }
+//         &:hover,
+//         &.bgColor{
+//             background-color: #F2F2F2;
+//         }
+//     }
+// }
 
 
 .link--hover{
@@ -271,13 +250,16 @@
     }
 }
 
-.icon--hover{
+.icon--hover,
+.btn--hover{
     transition: transform 0.2s ease-in-out;
     &:hover{
         opacity: 0.7;
         transform: scale(1.2);
     }
 }
+
+
 
 .link--hoverLonestar{
     transition: color 0.3s ease-in-out;
@@ -308,6 +290,7 @@
         outline: 1px solid $BrightRed;
     }
 }
+
 
 
 

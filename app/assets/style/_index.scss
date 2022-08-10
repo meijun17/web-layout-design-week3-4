@@ -4,8 +4,11 @@
     background-image: url("../images/home-header.png");
     background-position: center center;
     background-size: cover;
-    @include pad-768{
+    @include pad{
         background-image: url("../images/home-header-sm.png");
+    }
+    @include mobile{
+        height: 476px;
     }
     &__description{
         height: calc( 100vh - 80px );
@@ -26,19 +29,7 @@
             margin-top: 4px;
             @include font-Noto(20px,500);
         }
-        @include pad-768{
-            margin-left: -12px;
-            margin-right: -12px;
-        }
-        @include pad-650{
-            .title{
-                @include font-Noto(48px,700,$Lonestar);
-            }
-            .sub-title{
-                @include font-Roboto(32px,500,$Lonestar);
-            }
-        }
-        @include phone-375{
+        @include mobile{
             .title{
                 @include font-Noto(24px,700,$Lonestar);
             }
@@ -53,15 +44,15 @@
     background: $Fantasy;
     padding-top: 80px;
     padding-bottom: 80px;
-    @include phone-375{
+    @include mobile{
         padding-top: 40px;
         padding-bottom: 40px;
     }
     .title{
         text-align: center;
-        @include font-Noto(48px,700,$Lonestar);
         margin-bottom: 24px;
-        @include phone-375{
+        @include font-Noto(48px,700,$Lonestar);
+        @include mobile{
             @include font-Noto(24px,700,$Lonestar);
         }
     }
@@ -82,16 +73,14 @@
             text-align: left;
             @include font-Noto(16px,500,$Black);
         }
-        @include pad-768{
-            margin-left: -12px;
-            margin-right: -12px;
+        @include pad{
             flex-wrap: wrap;
             gap: 24px;
             .item{
                 width: calc(( 100% - 24px) / 2);
             }
         }
-        @include phone-375{
+        @include mobile{
             .item{
                 width: 100%;
             }
@@ -106,7 +95,7 @@
     .title{ 
         @include font-Noto(48px,700,$Lonestar);
         margin-bottom: 48px; 
-        @include phone-375{
+        @include mobile{
             @include font-Noto(24px,700,$Lonestar);
             margin-bottom: 24px; 
         }
@@ -118,26 +107,31 @@
         .sub-title{       
             font-style: italic;
             @include font-Noto(48px,700,$BrightRed);
+            @include mobile{
+                @include font-Noto(24px,700,$BrightRed); 
+            }
         }
-        @include pad-768{
+        .item{
+            max-width: calc( (100% - 72px )/3 );
+        }
+        @include pad{
             flex-wrap: wrap;
             justify-content: center;
             .item{
                 max-width: 50%;
             }
         }
-        @include phone-375{
-            margin-left: -12px;
-            margin-right: -12px;
+        @include mobile{
+            flex-wrap: wrap;
+            justify-content: center;
             .item{
                 max-width: 100%;
             }
         }
     }
-    &Img{
+    .productTypeImg{
         display: block;
         max-width: 100%;
-        height: auto;
         margin-bottom: 8px;
     }
 }
@@ -153,7 +147,7 @@
         @include font-Noto(48px,700,white);
         margin-bottom: 48px;
     }
-    @include phone-375{
+    @include mobile{
         padding-top: 40px;
         padding-bottom: 40px;
         .title{ 
@@ -171,26 +165,24 @@
             padding-bottom: 8px;
             @include font-Noto(48px,700,$BrightRed);
         }
-        @include pad-768{
+        @include pad{
             flex-wrap: wrap;
             gap: 24px;
-            margin-left: -12px;
-            margin-right: -12px;
         }
     }
     &Img{
         display: block;
         max-width: 100%;
         height: auto;
-        @include pad-768{
+        @include pad{
             max-width: 100%;
         }
-        @include phone-375{
+        @include mobile{
             display: none;
         }
         &.img-sm{
             display: none;
-            @include phone-375{
+            @include mobile{
                 display: block;
             }
         }
@@ -210,10 +202,8 @@
         justify-content: space-between;
         gap: 24px;
     }
-    @include pad-768{
+    @include pad{
         &__content{
-            margin-left: -12px;
-            margin-right: -12px;
             flex-wrap: wrap;
         }
     }
@@ -246,22 +236,14 @@
             @include font-Noto(14px,500,$DoveGray);
         }
     }
-    @include pad-768{
+    @include pad{
         .customor{
             width: calc(( 100% - 24px) / 2);
-            &Img,
-            &Txt{
-                width: 336px;
-            }
         }
     }
-    @include phone-375{
+    @include mobile{
         .customor{
             width: 100%;
-            &Img,
-            &Txt{
-                width: 348px;
-            }
         }
     }
 }
@@ -270,39 +252,36 @@
     background: $Fantasy;
     padding-top: 80px;
     padding-bottom: 80px;
-    @include phone-375{
+    @include mobile{
         padding-top: 40px;
         padding-bottom: 40px;
     }
     &__description{
         @include font-Noto(20px,500,$Black);
         margin: 24px auto;
-        @include pad-768{
+        @include pad{
             @include font-Noto(16px,500,$Black);
         }
     }
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .title{ 
-            text-align: center;
-            @include font-Noto(48px,700,$Lonestar);
+    .title{ 
+        text-align: center;
+        @include font-Noto(48px,700,$Lonestar);
+        @include mobile{
+            @include font-Noto(24px,700,$Lonestar);
         }
+    }
 }
 
 .form__content{
     width: 636px;
-    @include pad-768{
+    margin: 0 auto;
+    @include pad{
         width: 576px;
     }
-    @include phone-375{
-        width: 348px;
+    @include mobile{
+        width: 100%;
     }
     .form{
-        display: flex;
-        flex-direction: column;
         &__text{
             @include font-Noto(16px,500,$Black);
             display: inline-block;
@@ -310,16 +289,15 @@
         }
         &__input,
         &__textarea{
-            opacity: 0.2;
+            background: #FBF2F2;
+            border: 1px solid $Black;
             padding: 6px 12px;
-            width: 636px;
+            width: 100%;
             margin-bottom: 16px;
+            outline: none;
             @include font-Noto(16px,500,$Black);
-            @include pad-768{
-                width: 576px;
-            }
-            @include phone-375{
-                width: 348px;
+            &:focus{
+                box-shadow: 0px 0px 2px $Lonestar;
             }
         }
         &__textarea{
@@ -336,30 +314,36 @@
             }
         }
         .submitBtn{
+            display:block;
             border: none;
             background-color: $BrightRed;
-            padding: 16px 176px;
+            padding: 16px;
             width: 416px;
             cursor: pointer;
             margin: 48px auto 0;
             @include font-Noto(16px,700);
-            @include pad-768{
-                padding: 16px 136px;
-                width: 348px;
+            &:hover{
+                background-color: lighten($BrightRed,5%);
             }
-            @include phone-375{
+            @include pad{
+                width: 336px;
+            }
+            @include mobile{
                 margin: 24px auto 0;
+                width: 100%;
             }
-        }
         }
     }
 }
 
 
+
+
 .productType__content{
     .item{
         transition: all 0.3s;
-        &:hover .productTypeImg{
+        &:hover .productTypeImg,
+        &:hover .sub-title{
             transform: scale(1.01);
         }
         &:hover .sub-title{
