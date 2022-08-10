@@ -21,6 +21,9 @@
         text-align: center;
         padding-top: 24px;
         @include font-Roboto(32px,500,$Black);
+        @include pad{
+            padding-top: 16px;
+        }
         &::after{
             content:"";
             display: block;
@@ -28,15 +31,19 @@
             border-bottom:8px solid $BrightRed;
             transform: scale(0);
             transition: transform 0.5s ease-in-out;
+            @include pad{
+                padding-top: 7px;
+            }
         }
         &.active::after,
         &:hover::after{
             transform: scale(1);
         }
-        @include pad-768{
+        @include pad{
             @include font-Roboto(24px,500,$Black);
         }
-        @include phone-375{
+        @include mobile{
+            margin-top: 80px;
             @include font-Roboto(16px,500,$Black);
         }
     }
@@ -50,7 +57,7 @@
         background-repeat: no-repeat;
         height: 296px;
         width: 50%;
-        @include phone-375{
+        @include mobile{
             height: 136px;
         }
     }
@@ -66,7 +73,7 @@
     .img4{
         background-image: url("../images/product-header-4.png");
     }
-    @include pad-768{
+    @include pad{
         .img1{
             background-image: url("../images/product-header-sm-1.png");
         }
@@ -86,14 +93,14 @@
 .products{
     padding-top: 80px;
     padding-bottom: 80px;
-    @include phone-375{
+    @include mobile{
         padding-top: 40px;
         padding-bottom: 64px;
     }
     .title{
         text-align: center;
         @include font-Roboto(42px,500,$Black);
-        @include phone-375{
+        @include mobile{
             @include font-Roboto(24px,500,$Black);
         }
     }
@@ -101,7 +108,7 @@
         text-align: center;
         @include font-Noto(32px,500,$Black);
         margin-bottom: 32px;
-        @include phone-375{
+        @include mobile{
             @include font-Roboto(24px,500,$Black);
             margin-bottom: 24px;
         }
@@ -112,9 +119,7 @@
         column-gap: 24px;
         flex-wrap: wrap;
         row-gap: 80px;
-        @include pad-768{
-            margin-left: -12px;
-            margin-right: -12px;
+        @include pad{
             row-gap: 40px;
         }
     }
@@ -130,10 +135,10 @@
 
 .productType-four-items,
 .productType-three-items{
-    @include pad-768{
+    @include pad{
         width: calc((100% - 24px) / 2 );
     }
-    @include phone-375{
+    @include mobile{
         width: 100%;
     }
 }
