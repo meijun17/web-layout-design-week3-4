@@ -21,9 +21,6 @@
         text-align: center;
         padding-top: 24px;
         @include font-Roboto(32px,500,$Black);
-        @include pad{
-            padding-top: 16px;
-        }
         &::after{
             content:"";
             display: block;
@@ -40,6 +37,7 @@
             transform: scale(1);
         }
         @include pad{
+            padding-top: 16px;
             @include font-Roboto(24px,500,$Black);
         }
         @include mobile{

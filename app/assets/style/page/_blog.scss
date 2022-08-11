@@ -1,47 +1,44 @@
 .blog{
     padding-top: 96px;
     padding-bottom: 124px;
-    @include pad-768{
+    @include pad{
         padding-top: 80px;
+        padding-bottom: 80px;
     }
-    @include phone-375{
+    @include mobile{
         padding-top: 40px;
         padding-bottom: 64px;
-    }
-    &__content{
-        @include pad-768{
-            margin-left: -12px;
-            margin-right: -12px;
-        }
     }
     .title{
         margin-bottom:32px;
         @include page_title;
-        @include pad-768{
+        @include pad{
             margin-bottom: 40px;
         }
-        @include phone-375{
+        @include mobile{
             margin-bottom: 24px;
+        }
+    }
+    &__content{
+        @include mobile{
+            margin-top: 80px;
         }
     }
 }
 
 .blog__menu{
     background-color: $Lonestar;
-    @include phone-375{
+    @include mobile{
         &.displayNone{
             display: none;
         }
     }
     .blog__menu__content{
-        margin-left: -12px;
-        margin-right: -12px;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
         @include font-Noto(20px,700,white);
-        @include phone-375{
+        @include mobile{
             @include font-Noto(16px,700,white);
         }
     }
@@ -50,7 +47,7 @@
         column-gap: 48px;
         padding-top: 13px;
         padding-bottom: 8px;
-        @include phone-375{
+        @include mobile{
             column-gap: 25px;
         }
     }
@@ -64,7 +61,7 @@
             color: white;
             cursor: pointer;
         }
-        @include phone-375{
+        @include mobile{
             &.displayNone{
                 display: none;
             }
@@ -76,7 +73,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 60px;
-    @include phone-375{
+    @include pad{
         row-gap: 24px;
     }
     .article{
@@ -91,12 +88,12 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        @include pad-768{
+        @include pad{
             &__content{
                 height: 208px;
             }
         }
-        @include phone-375{
+        @include mobile{
             flex-direction: column;
             row-gap: 8px;
             height: 276px;
@@ -111,7 +108,7 @@
 .article{
     &__title{
         @include font-Noto(32px,500,$Lonestar);
-        @include pad-768{
+        @include pad{
             @include font-Noto(24px,500,$Lonestar);
         }
     }
@@ -121,7 +118,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 16px;
-        @include pad-768{
+        @include pad{
             @include font-Noto(16px,500,$Black);
             margin-bottom: 4px;
         }
@@ -131,10 +128,9 @@
     }
     &__text{
         @include font-Noto(20px,500,#555555);
-        @include pad-768{
+        @include pad{
             @include font-Noto(16px,500,#555555);
             overflow: hidden;
-            -o-text-overflow: ellipsis;
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -144,7 +140,7 @@
     &__btn{
         @include font-Roboto(36px,700,$Lonestar);
         text-align: right;
-        @include pad-768{
+        @include pad{
             @include font-Noto(16px,500,#555555);
             text-transform: lowercase;
             p,
@@ -161,7 +157,7 @@
     }
     &__text,
     &__btn{
-        @include phone-375{
+        @include mobile{
             display: none;
         }
     }
@@ -174,10 +170,10 @@
 .articleText{
     padding-top: 24px;
     padding-bottom: 80px;
-    @include pad-768{
+    @include pad{
         padding-top: 8px;
     }
-    @include phone-375{
+    @include mobile{
         padding-top: 16px;
         padding-bottom: 64px;
     }
@@ -186,9 +182,6 @@
         column-gap: 24px;
         margin-left: -12px;
         margin-right: -12px;
-        //@include phone-375{
-        //    flex-direction: column;
-        //}
     }
 }
 
@@ -206,7 +199,7 @@
     display: flex;
     gap: 15px;
     @include font-Noto(24px,700,$BrightRed);
-    @include pad-768{
+    @include pad{
         @include font-Noto(16px,700,$BrightRed);
     }
 }
@@ -225,10 +218,10 @@
         flex-direction: column;
         row-gap: 40px;
         margin-bottom: 40px;
-        @include pad-768{
+        @include pad{
             row-gap: 24px;
         }
-        @include phone-375{
+        @include mobile{
             row-gap: 16px;
         }
     }
@@ -254,7 +247,7 @@
     }
     border-bottom: 1px solid #707070;
     padding-bottom: 15px;
-    @include phone-375{
+    @include mobile{
         display: none;
     }
 }
@@ -269,17 +262,17 @@
     }
     @include font-Noto(16px,500,$Black);
     margin-top: 24px;
-    @include phone-375{
+    @include mobile{
         display: none;
     }
 }
 
 .tags{
     margin-top: 76px;
-    @include pad-768{
+    @include pad{
         margin-top: 73px;
     }
-    @include phone-375{
+    @include mobile{
         display: none;
     }
     .title{
@@ -299,7 +292,7 @@
         flex-wrap: wrap;
         row-gap: 4px;
         column-gap: 24px;
-        @include pad-768{
+        @include pad{
             width: 156px;
             column-gap: 16px;
         }

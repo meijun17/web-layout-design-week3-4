@@ -1,22 +1,21 @@
 .faq{
     padding-top: 96px;
     padding-bottom: 80px;
-    @include pad-768{
+    @include pad{
         padding-top: 80px;
     }
-    @include phone-375{
+    @include mobile{
         padding-top: 40px;
         padding-bottom: 64px;
     }
     &__content{
-        @include pad-768{
-            margin-left: -12px;
-            margin-right: -12px;
+        @include mobile{
+            margin-top: 80px;
         }
     }
     li:not(:last-child){
         margin-bottom: 32px;
-        @include phone-375{
+        @include mobile{
             margin-bottom: 24px;
         }
     }
@@ -27,7 +26,7 @@
         @include font-Noto(24px,700,$Black);
         margin-top: 32px;
         margin-bottom: 24px;
-        @include phone-375{
+        @include mobile{
             margin-top: 24px;
         }
     }

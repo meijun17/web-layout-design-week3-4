@@ -16,7 +16,7 @@
     @include font-Noto(48px,700,$Black);
     border-left: 8px solid #9F1213;
     padding-left: 16px;
-    @include phone-375{
+    @include mobile{
         @include font-Noto(24px,700,$Black);
     }
 }
