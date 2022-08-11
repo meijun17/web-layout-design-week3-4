@@ -176,12 +176,11 @@
     @include mobile{
         padding-top: 16px;
         padding-bottom: 64px;
+        margin-top: 80px;
     }
     .all-page{
         display: flex;
         column-gap: 24px;
-        margin-left: -12px;
-        margin-right: -12px;
     }
 }
 

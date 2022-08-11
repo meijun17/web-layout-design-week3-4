@@ -103,27 +103,26 @@
     &__content{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 24px;
         .sub-title{       
             font-style: italic;
-            @include font-Noto(48px,700,$BrightRed);
+            text-align: center;
+            @include font-Roboto(48px,700,$BrightRed);
             @include mobile{
-                @include font-Noto(24px,700,$BrightRed); 
+                @include font-Roboto(24px,700,$BrightRed); 
             }
         }
         .item{
             max-width: calc( (100% - 72px )/3 );
         }
         @include pad{
-            flex-wrap: wrap;
             justify-content: center;
             .item{
                 max-width: 50%;
             }
         }
         @include mobile{
-            flex-wrap: wrap;
-            justify-content: center;
             .item{
                 max-width: 100%;
             }
