@@ -549,16 +549,19 @@ img {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     gap: 24px; }
     .productType__content .sub-title {
       font-style: italic;
-      font-family: 'Noto Sans TC', sans-serif;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
       font-size: 48px;
       font-weight: 700;
       color: #AA0601; }
       @media (max-width: 767px) {
         .productType__content .sub-title {
-          font-family: 'Noto Sans TC', sans-serif;
+          font-family: 'Roboto', sans-serif;
           font-size: 24px;
           font-weight: 700;
           color: #AA0601; } }
@@ -566,22 +569,14 @@ img {
       max-width: calc( (100% - 72px )/3); }
     @media (max-width: 992px) {
       .productType__content {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center; }
         .productType__content .item {
           max-width: 50%; } }
     @media (max-width: 767px) {
-      .productType__content {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center; }
-        .productType__content .item {
-          max-width: 100%; } }
+      .productType__content .item {
+        max-width: 100%; } }
   .productType .productTypeImg {
     display: block;
     max-width: 100%;
@@ -1520,16 +1515,15 @@ img {
   @media (max-width: 767px) {
     .articleText {
       padding-top: 16px;
-      padding-bottom: 64px; } }
+      padding-bottom: 64px;
+      margin-top: 80px; } }
   .articleText .all-page {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-column-gap: 24px;
        -moz-column-gap: 24px;
-            column-gap: 24px;
-    margin-left: -12px;
-    margin-right: -12px; }
+            column-gap: 24px; }
 
 .bread-crumbs {
   display: -webkit-box;
