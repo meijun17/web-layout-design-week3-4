@@ -23,13 +23,18 @@
             @include font-Roboto(36px,500,$Lonestar);
         }
         .link{
-            display: inline-block;
+            display: block;
             background-color: $BrightRed;
             padding: 6px 12px;
             margin-top: 4px;
             @include font-Noto(20px,500);
+            &:hover{
+                background-color: ($Lonestar);
+            }
         }
         @include mobile{
+            padding-top: 80px;
+            height: 396px;
             .title{
                 @include font-Noto(24px,700,$Lonestar);
             }
