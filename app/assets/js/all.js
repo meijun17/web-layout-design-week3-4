@@ -2,6 +2,10 @@ $('.navBtn').on('click', () => {
     $('.nav').toggleClass('active');
 });
 
-// $('.nav__link').on('click', () => {
-//     $(this).addClass('.active');
-// });
+AOS.init();
+
+AOS.init({
+    once: true, // whether animation should happen only once - while scrolling down
+  });
+
+AOS.refresh();  // ecalculate all offsets and positions of elements (called on window resize)
